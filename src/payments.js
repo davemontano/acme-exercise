@@ -1,3 +1,4 @@
+const fs = require("fs")
 const { WEEKDAY_FEES, WEEKEND_FEES } = require("./constants/fees")
 const { WEEKDAYS } = require("./constants/days")
 const {
@@ -48,4 +49,23 @@ const showFinalPayment = (element) => {
   return totalPay
 }
 
-module.exports = { calculateTotalPayment, showFinalPayment }
+const processPayments = (inputFile) => {
+
+    fs.readFile(inputFile, "utf-8", (err, data) => {
+        if (err) {
+          throw new Error(err)
+        }
+        const inputArray = data.split("\n")
+      
+        try {
+          inputArray.forEach((element) => {
+            showFinalPayment(element)
+          })
+        } catch(error) {
+          throw new Error(error)
+        }
+      })
+
+}
+
+module.exports = { calculateTotalPayment, showFinalPayment, processPayments }
