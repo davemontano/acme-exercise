@@ -1,5 +1,3 @@
-const fs = require("fs")
-
 const getDayAndHours = (item) => {
   const day = item.substring(0, 2)
   const hours = item.substring(2)

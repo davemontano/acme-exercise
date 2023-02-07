@@ -43,6 +43,9 @@ const showFinalPayment = (element) => {
     totalPay += calculateTotalPayment(day, startHour, endHour)
   }
   console.log(`The amount to pay ${name} is: ${totalPay} USD`)
+
+  // for testing purposes
+  return totalPay
 }
 
 module.exports = { calculateTotalPayment, showFinalPayment }
