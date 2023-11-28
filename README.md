@@ -1,4 +1,4 @@
-# ioet-acme
+# acme-exercise
 
 ## About this project
 
